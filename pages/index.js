@@ -28,7 +28,7 @@ export default function Home() {
           </div>
           {/* Actions */}
           <div className='flex gap-x-4'>
-            <Link href='/'>
+            <Link href='/katalog'>
               <div className='rounded px-8 py-4 text-xl tracking-wider bg-teal-600 text-white cursor-pointer mt-8 w-fit'>
                 Katalog
               </div>

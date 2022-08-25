@@ -10,7 +10,7 @@ const NAVIGATION = [
     },
     {
         title: "Katalog",
-        link: "/"
+        link: "/katalog"
     },
     {
         title: "O nas",
