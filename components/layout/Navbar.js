@@ -28,7 +28,7 @@ const NAVIGATION = [
 
 const Navbar = () => {
     return (
-        <div className='z-20 w-full flex justify-between items-center shadow h-16 px-8 bg-teal-500'>
+        <div className='z-20 w-full flex justify-between items-center shadow h-16 px-8 bg-zinc-50'>
             {/* Main navigation */}
             <div className='md:flex gap-x-8 hidden'>
                 {NAVIGATION.map((nav, index) => (
