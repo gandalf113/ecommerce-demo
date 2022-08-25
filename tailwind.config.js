@@ -5,6 +5,9 @@ module.exports = {
     "./components/**/*.js",
   ],
   theme: {
+    fontFamily: {
+      body: ['Inter'],
+    },
     extend: {},
   },
   plugins: [],
