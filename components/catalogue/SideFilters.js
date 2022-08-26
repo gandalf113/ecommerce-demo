@@ -1,8 +1,6 @@
 import React from 'react'
 import FilterDropdown from './ui/FilterDropdown'
-
-const CATEGORY_FILTERS = ['Wszystko', 'T-Shirty', 'Płaszcze', 'Kurtki', 'Buty', 'Torby', 'Spodnie']
-const SIZE_FILTERS = ['XS', 'S', 'M', 'L', 'XL', 'XXL']
+import { CATEGORY_FILTERS, SIZE_FILTERS } from '../../context/filter-context'
 
 const SideFilters = () => {
 

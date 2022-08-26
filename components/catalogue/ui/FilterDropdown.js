@@ -5,10 +5,15 @@ import FilterDropdownItem from './FilterDropdownItem'
 
 const FilterDropdown = ({ filterId, title, filterOptions }) => {
     const [isOpen, setIsOpen] = useState();
-    const { toggleFilter } = useContext(FilterContext);
+    const { filters, toggleFilter } = useContext(FilterContext);
 
     const toggleIsOpen = () => {
         setIsOpen(!isOpen);
+    }
+
+    const isItemActive = (filter) => {
+        if (filters[filterId].includes(filter)) return true;
+        return false;
     }
 
     return (
@@ -23,7 +28,11 @@ const FilterDropdown = ({ filterId, title, filterOptions }) => {
             {/* Dropdown items */}
             <div className={`${isOpen ? 'block' : 'hidden'}`}>
                 {filterOptions.map((item, index) => (
-                    <FilterDropdownItem key={index} filter={item} handleClick={() => toggleFilter(filterId, item)}/>
+                    <FilterDropdownItem
+                        key={index}
+                        filter={item}
+                        isActive={isItemActive(item)}
+                        handleClick={() => toggleFilter(filterId, item)} />
                 ))}
             </div>
         </div>

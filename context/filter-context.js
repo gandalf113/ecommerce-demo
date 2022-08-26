@@ -1,13 +1,16 @@
 import { createContext, useState } from "react";
 import { appendElement, removeElement } from "../utils/shared-utils";
 
+export const CATEGORY_FILTERS = ['T-Shirty', 'Płaszcz', 'Kurtki', 'Buty', 'Torba', 'Spodnie']
+export const SIZE_FILTERS = ['XS', 'S', 'M', 'L', 'XL', 'XXL']
+
 const FilterContext = createContext();
 
 export const FilterContextProvider = props => {
     const [filters, setFilters] = useState(
         {
-            category: [],
-            size: [],
+            category: CATEGORY_FILTERS,
+            size: SIZE_FILTERS,
         }
     );
 
