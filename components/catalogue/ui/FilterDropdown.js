@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai'
+import FilterContext from '../../../context/filter-context'
 import FilterDropdownItem from './FilterDropdownItem'
 
-const FilterDropdown = ({ title, filterOptions }) => {
+const FilterDropdown = ({ filterId, title, filterOptions }) => {
     const [isOpen, setIsOpen] = useState();
+    const { toggleFilter } = useContext(FilterContext);
 
     const toggleIsOpen = () => {
         setIsOpen(!isOpen);
@@ -21,7 +23,7 @@ const FilterDropdown = ({ title, filterOptions }) => {
             {/* Dropdown items */}
             <div className={`${isOpen ? 'block' : 'hidden'}`}>
                 {filterOptions.map((item, index) => (
-                    <FilterDropdownItem key={index} filter={item} />
+                    <FilterDropdownItem key={index} filter={item} handleClick={() => toggleFilter(filterId, item)}/>
                 ))}
             </div>
         </div>
