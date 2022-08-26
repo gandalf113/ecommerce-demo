@@ -4,7 +4,7 @@ const DUMMY_DATA = [
         name: 'Drole de copine Paris',
         image: '/img/catalogue/drole_de_copine_paris.jpg',
         price: 230,
-        sex: 'Mężczyzna',
+        sex: 'male',
         categories: ['Płaszcz']
     },
     {
@@ -12,7 +12,7 @@ const DUMMY_DATA = [
         image: '/img/catalogue/green_queen.jpg',
         name: 'Queen',
         price: 28,
-        sex: 'Kobieta',
+        sex: 'female',
         categories: ['Odzież dziecięca', 'Bluza']
     },
     {
@@ -20,7 +20,7 @@ const DUMMY_DATA = [
         name: 'GEL, lekkie buty sportowe',
         image: '/img/catalogue/blue_gel.jpg',
         price: 159,
-        sex: 'Mężczyzna',
+        sex: 'male',
         categories: ['Buty', 'Sport']
     },
     {
@@ -28,7 +28,7 @@ const DUMMY_DATA = [
         name: 'CORDURA buty sportowe',
         image: '/img/catalogue/blue_codura.jpg',
         price: 199,
-        sex: 'Mężczyzna',
+        sex: 'male',
         categories: ['Buty', 'Sport']
     },
     {
@@ -36,7 +36,7 @@ const DUMMY_DATA = [
         name: 'ADIDAS SALA, nowe buty',
         image: '/img/catalogue/white_adidas.jpg',
         price: 110,
-        sex: 'Mężczyzna',
+        sex: 'male',
         categories: ['Buty', 'Sport']
     },
     {
@@ -44,7 +44,7 @@ const DUMMY_DATA = [
         name: 'Torba Laura Biaggi',
         image: '/img/catalogue/laura_biaggi.jpg',
         price: 89,
-        sex: 'Kobieta',
+        sex: 'female',
         categories: ['Torba']
     },
 ]

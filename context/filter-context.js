@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 import { appendElement, removeElement } from "../utils/shared-utils";
 
-export const CATEGORY_FILTERS = ['T-Shirty', 'Płaszcz', 'Kurtki', 'Buty', 'Torba', 'Spodnie']
+export const CATEGORY_FILTERS = ['T-Shirty', 'Płaszcz', 'Kurtka', 'Bluza', 'Buty', 'Torba', 'Spodnie']
 export const SIZE_FILTERS = ['XS', 'S', 'M', 'L', 'XL', 'XXL']
 
 const FilterContext = createContext();
@@ -9,36 +9,11 @@ const FilterContext = createContext();
 export const FilterContextProvider = props => {
     const [filters, setFilters] = useState(
         {
+            sex: 'any', // any/male/female/baby
             category: CATEGORY_FILTERS,
             size: SIZE_FILTERS,
         }
     );
-
-    /**
-     * Dodaje filtr do wybranego klucza
-     * @param {Array} array - lista filtrów, na których operujemy np. filters['category']
-     * @param {String} filter - filtr do dodania np. T-Shirt, XS
-     */
-    const addFilter = (key, array, filter) => {
-        const newArray = appendElement(filter, array);
-        setFilters({
-            ...filters,
-            [key]: newArray
-        })
-    }
-
-    /**
-     * Usuwa filtr z wybranego klucza
-     * @param {Array} array - lista filtrów, na których operujemy np. filters['category']
-     * @param {String} filter - filtr do usunięcia np. T-Shirt, XS
-     */
-    const removeFilter = (array, filter) => {
-        const newArray = removeElement(array.findIndex(filter), array);
-        setFilters({
-            ...filters,
-            [key]: newArray
-        })
-    }
 
     /**
      * Włącza filtr jeżeli jest wyłączony i odwrotnie
@@ -60,12 +35,18 @@ export const FilterContextProvider = props => {
             ...filters,
             [key]: newArray
         })
+    }
 
+    const setSexFilter = (sex) => {
+        setFilters({
+            ...filters,
+            sex: sex
+        })
     }
 
     return (
         <FilterContext.Provider value={{
-            filters, toggleFilter
+            filters, toggleFilter, setSexFilter
         }}>
             {props.children}
         </FilterContext.Provider>

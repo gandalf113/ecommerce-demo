@@ -8,11 +8,11 @@ export default function Home() {
   return (
     <div className='space-y-4'>
       {/* Pierwszy blok */}
-      <section className='h-screen flex text-zinc-100'>
+      <section className='h-screen flex text-zinc-900'>
         {/* Tło */}
-        <img className='absolute -z-10 w-screen h-screen brightness-[0.25]
+        {/* <img className='absolute -z-10 w-screen h-screen brightness-[0.25]
         select-none pointer-events-none object-cover object-center'
-          src='/img/bg_clothes.jpg' alt='' />
+          src='/img/bg_clothes.jpg' alt='' /> */}
 
         {/* Tekst */}
         <div className='flex flex-col px-12 md:mt-48 mt-10 lg:w-1/2 md:w-3/5 w-full
@@ -34,7 +34,7 @@ export default function Home() {
               </div>
             </Link>
             <Link href='/'>
-              <div className='rounded px-8 py-4 text-xl tracking-wider ring-4 ring-teal-600 text-white cursor-pointer w-fit'>
+              <div className='rounded px-8 py-4 text-xl tracking-wider ring-4 ring-teal-600 text-teal-600 cursor-pointer w-fit'>
                 Kontakt
               </div>
             </Link>

@@ -8,12 +8,20 @@ const checkItemForCategory = (item, filters) => {
     return item['categories'].some(category => filters['category'].includes(category));
 }
 
+const checkItemForSex = (item, filters) => {
+    if (filters['sex'] === 'any') return true;
+    return item['sex'] === filters['sex'];
+}
+
 
 const CataloguePage = ({ items }) => {
     const { filters } = useContext(FilterContext);
 
     const filterItems = () => {
-        let filteredItems = items.filter(item => checkItemForCategory(item, filters))
+        let filteredItems = items.filter(item => (
+            checkItemForCategory(item, filters) &&
+            checkItemForSex(item, filters))
+        )
         return filteredItems
     }
 
