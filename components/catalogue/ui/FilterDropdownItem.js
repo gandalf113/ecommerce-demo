@@ -3,11 +3,11 @@ import { MdCheckBoxOutlineBlank, MdCheckBox } from 'react-icons/md'
 
 const FilterDropdownItem = ({ filter, handleClick, isActive, all=false }) => {
     return (
-        <div className='flex items-center gap-x-2 font-extralight' onClick={handleClick}>
+        <div className='flex text-gray-500 items-center gap-x-2 font-extralight cursor-pointer hover:bg-zinc-100' onClick={handleClick}>
             {
                 isActive ?
-                <MdCheckBox size={16} /> :
-                <MdCheckBoxOutlineBlank size={16} />
+                <MdCheckBox size={18}/> :
+                <MdCheckBoxOutlineBlank size={18} />
             }
             <p>{filter}</p>
         </div>

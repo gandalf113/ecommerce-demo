@@ -19,8 +19,8 @@ const FilterDropdown = ({ filterId, title, filterOptions }) => {
     return (
         <div>
             {/* Dropdown */}
-            <div className='flex justify-between items-center mb-2 cursor-pointer' onClick={toggleIsOpen}>
-                <h5>{title}</h5>
+            <div className='flex text-gray-400 hover:text-gray-700 justify-between items-center mb-2 cursor-pointer' onClick={toggleIsOpen}>
+                <h5 className='text-gray-900'>{title}</h5>
                 {isOpen ? <AiOutlineMinus /> : <AiOutlinePlus />}
             </div>
 

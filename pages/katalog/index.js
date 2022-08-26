@@ -27,15 +27,16 @@ const CataloguePage = ({ items }) => {
 
     return (
         <div className='p-4'>
-            {/* <h1 className='text-2xl tracking-tight'>Przeglądaj dostępny towar</h1>
-            <div className='my-6 border-t-2 border-neutral-200' /> */}
+            {/* <h1 className='text-3xl tracking-tight font-extralight mb-4'>Przeglądaj dostępny towar</h1> */}
+            {/* <div className='my-4 border-t-2 border-neutral-200' /> */}
             {/* <p>Active filters: {JSON.stringify(filters)}</p> */}
 
-            <div className='flex'>
-                <SideFilters />
-                <div className='px-8'>
+            <div className='grid grid-cols-10'>
+                <div className='lg:col-span-2 col-span-3 sm:block hidden'>
+                    <SideFilters />
+                </div>
+                <div className='md:px-8 lg:col-span-8 sm:col-span-7 col-span-10 w-full'>
                     <ItemsList items={filterItems()} />
-
                 </div>
             </div>
         </div>
