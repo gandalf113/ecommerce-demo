@@ -5,7 +5,7 @@ import FilterDropdownItem from './FilterDropdownItem'
 
 const FilterDropdown = ({ filterId, title, filterOptions }) => {
     const [isOpen, setIsOpen] = useState();
-    const { filters, toggleFilter } = useContext(FilterContext);
+    const { filters, toggleFilter, toggleSelectAll } = useContext(FilterContext);
 
     const toggleIsOpen = () => {
         setIsOpen(!isOpen);
@@ -14,6 +14,10 @@ const FilterDropdown = ({ filterId, title, filterOptions }) => {
     const isItemActive = (filter) => {
         if (filters[filterId].includes(filter)) return true;
         return false;
+    }
+
+    const isEverythingSelected = (key) => {
+        return filters[key].length === filterOptions.length;
     }
 
     return (
@@ -27,6 +31,9 @@ const FilterDropdown = ({ filterId, title, filterOptions }) => {
 
             {/* Dropdown items */}
             <div className={`${isOpen ? 'block' : 'hidden'}`}>
+                <FilterDropdownItem filter='Wszystko' all
+                    isActive={isEverythingSelected(filterId)}
+                    handleClick={() => toggleSelectAll(filterId, isEverythingSelected(filterId))} />
                 {filterOptions.map((item, index) => (
                     <FilterDropdownItem
                         key={index}

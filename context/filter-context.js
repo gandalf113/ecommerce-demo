@@ -6,14 +6,14 @@ export const SIZE_FILTERS = ['XS', 'S', 'M', 'L', 'XL', 'XXL']
 
 const FilterContext = createContext();
 
+const initialState = {
+    sex: 'any', // any/male/female/baby
+    category: CATEGORY_FILTERS,
+    size: SIZE_FILTERS,
+}
+
 export const FilterContextProvider = props => {
-    const [filters, setFilters] = useState(
-        {
-            sex: 'any', // any/male/female/baby
-            category: CATEGORY_FILTERS,
-            size: SIZE_FILTERS,
-        }
-    );
+    const [filters, setFilters] = useState(initialState);
 
     /**
      * Włącza filtr jeżeli jest wyłączony i odwrotnie
@@ -44,9 +44,25 @@ export const FilterContextProvider = props => {
         })
     }
 
+    const toggleSelectAll = (key, isEverythingSelected) => {
+        if (isEverythingSelected) {
+            // Unselect all
+            setFilters({
+                ...filters,
+                [key]: []
+            })
+        } else {
+            // Select all
+            setFilters({
+                ...filters,
+                [key]: initialState[key]
+            })
+        }
+    }
+
     return (
         <FilterContext.Provider value={{
-            filters, toggleFilter, setSexFilter
+            filters, toggleFilter, toggleSelectAll, setSexFilter
         }}>
             {props.children}
         </FilterContext.Provider>
