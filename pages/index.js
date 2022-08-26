@@ -15,7 +15,7 @@ export default function Home() {
           src='/img/bg_clothes.jpg' alt='' />
 
         {/* Tekst */}
-        <div className='flex flex-col px-12 md:mt-48 mt-10 lg:w-1/2 md:w-3/5
+        <div className='flex flex-col px-12 md:mt-48 mt-10 lg:w-1/2 md:w-3/5 w-full
         m-auto items-center text-center'>
           {/* Pierwsza kolumna */}
           <div>
@@ -27,14 +27,14 @@ export default function Home() {
 
           </div>
           {/* Actions */}
-          <div className='flex gap-x-4'>
+          <div className='flex justify-center gap-4 md:mt-10 mt-4'>
             <Link href='/katalog'>
-              <div className='rounded px-8 py-4 text-xl tracking-wider bg-teal-600 text-white cursor-pointer mt-8 w-fit'>
+              <div className='rounded px-8 py-4 text-xl tracking-wider bg-teal-600 text-white cursor-pointer w-fit'>
                 Katalog
               </div>
             </Link>
             <Link href='/'>
-              <div className='rounded px-8 py-4 text-xl tracking-wider ring-4 ring-teal-600 text-white cursor-pointer mt-8 w-fit'>
+              <div className='rounded px-8 py-4 text-xl tracking-wider ring-4 ring-teal-600 text-white cursor-pointer w-fit'>
                 Kontakt
               </div>
             </Link>
