@@ -8,14 +8,15 @@ export default function Home() {
   return (
     <div className='space-y-4'>
       {/* Pierwszy blok */}
-      <section className='h-screen flex text-zinc-900'>
+      <section className='relative h-screen flex text-zinc-200'>
         {/* Tło */}
-        {/* <img className='absolute -z-10 w-screen h-screen brightness-[0.25]
+        <Image className=' brightness-[0.25]
         select-none pointer-events-none object-cover object-center'
-          src='/img/bg_clothes.jpg' alt='' /> */}
+          src='/img/bg_clothes.jpg' alt='tanie ubrania'
+          width={800} height={600} layout='fill' objectFit='cover'/>
 
         {/* Tekst */}
-        <div className='flex flex-col px-12 md:mt-48 mt-10 lg:w-1/2 md:w-3/5 w-full
+        <div className='flex z-10 flex-col px-12 md:mt-48 mt-10 lg:w-1/2 md:w-3/5 w-full
         m-auto items-center text-center'>
           {/* Pierwsza kolumna */}
           <div>
@@ -29,15 +30,15 @@ export default function Home() {
           {/* Actions */}
           <div className='flex justify-center gap-4 md:mt-10 mt-4'>
             <Link href='/katalog'>
-              <div className='rounded px-8 py-4 text-xl tracking-wider bg-teal-600 text-white cursor-pointer w-fit'>
+              <div className='rounded px-8 py-4 text-xl tracking-wider ring-1 hover:ring-2 ring-zinc-200 duration-200 text-white cursor-pointer w-fit'>
                 Katalog
               </div>
             </Link>
-            <Link href='/'>
+            {/* <Link href='/'>
               <div className='rounded px-8 py-4 text-xl tracking-wider ring-4 ring-teal-600 text-teal-600 cursor-pointer w-fit'>
                 Kontakt
               </div>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>

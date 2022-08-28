@@ -32,7 +32,7 @@ const Navbar = () => {
     const { toggleSideMenu } = useContext(LayoutContext);
 
     return (
-        <div className='z-20 w-full flex justify-between items-center shadow h-16 px-8 bg-zinc-50'>
+        <div className='z-10 w-full flex justify-between items-center shadow md:h-24 h-16 px-8 bg-zinc-50'>
             {/* Main navigation */}
             <div className='md:flex gap-x-8 hidden'>
                 {NAVIGATION.map((nav, index) => (
