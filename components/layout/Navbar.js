@@ -2,8 +2,9 @@ import React from 'react'
 import NavItem from '../ui/NavItem'
 import { SiFacebook } from 'react-icons/si'
 import { AiFillInstagram } from 'react-icons/ai'
+import { GiHamburgerMenu } from 'react-icons/gi'
 
-const NAVIGATION = [
+export const NAVIGATION = [
     {
         title: "Strona główna",
         link: "/"
@@ -26,7 +27,7 @@ const NAVIGATION = [
     },
 ]
 
-const Navbar = () => {
+const Navbar = ({ toggleSidebar }) => {
     return (
         <div className='z-20 w-full flex justify-between items-center shadow h-16 px-8 bg-zinc-50'>
             {/* Main navigation */}
@@ -41,6 +42,11 @@ const Navbar = () => {
                 <SiFacebook size={24} />
                 <AiFillInstagram size={30} />
             </div>
+
+            <button className='md:hidden block' onClick={toggleSidebar}>
+                <GiHamburgerMenu size={24} />
+            </button>
+
         </div>
     )
 }

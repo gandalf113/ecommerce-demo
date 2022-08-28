@@ -8,11 +8,15 @@ import '../styles/globals.css'
 function MyApp({ Component, pageProps }) {
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(true);
 
+  const toggleSidemenu = () => {
+    setIsSideMenuOpen(!isSideMenuOpen);
+  }
+
   return (
     <LayoutProvider>
       <FilterContextProvider>
         {<SideMenu isOpen={isSideMenuOpen} handleClose={() => setIsSideMenuOpen(false)} />}
-        <Layout>
+        <Layout toggleSidebar={toggleSidemenu}>
           <Component {...pageProps} />
         </Layout>
       </FilterContextProvider>
