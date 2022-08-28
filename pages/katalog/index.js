@@ -1,7 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { MdFilterAlt } from 'react-icons/md'
 import ItemsList from '../../components/catalogue/ItemsList'
 import SideFilters from '../../components/catalogue/SideFilters'
 import FilterContext from '../../context/filter-context'
+import { LayoutContext } from '../../context/layout-context'
 import { getAllItems } from '../../dummy-data'
 
 const checkItemForCategory = (item, filters) => {
@@ -16,6 +18,7 @@ const checkItemForSex = (item, filters) => {
 
 const CataloguePage = ({ items }) => {
     const { filters } = useContext(FilterContext);
+    const { toggleFilterMenu } = useContext(LayoutContext);
 
     const filterItems = () => {
         let filteredItems = items.filter(item => (
@@ -30,6 +33,16 @@ const CataloguePage = ({ items }) => {
             {/* <h1 className='text-3xl tracking-tight font-extralight mb-4'>Przeglądaj dostępny towar</h1> */}
             {/* <div className='my-4 border-t-2 border-neutral-200' /> */}
             {/* <p>Active filters: {JSON.stringify(filters)}</p> */}
+
+            {/* Mobile filters */}
+            <div className='sm:hidden block'>
+                <button className='flex items-center gap-x-1 mb-2 text-gray-600'
+                onClick={toggleFilterMenu}>
+                    <MdFilterAlt />
+                    Filtruj
+                </button>
+            </div>
+            <div className='sm:hidden block my-4 border-t-2 border-neutral-200' />
 
             <div className='grid grid-cols-10'>
                 <div className='lg:col-span-2 col-span-3 sm:block hidden'>

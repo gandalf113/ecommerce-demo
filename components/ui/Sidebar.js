@@ -13,7 +13,7 @@ const Sidebar = ({ isOpen, handleClose, children }) => {
                     transition={{ type: 'tween' }}
 
                     onClick={(e) => e.stopPropagation()}
-                    className='fixed h-screen right-0 bg-white w-[70vw]'>
+                    className='fixed h-screen z-50 right-0 bg-white w-[70vw]'>
                     {children}
                 </motion.div>
             </Backdrop>}

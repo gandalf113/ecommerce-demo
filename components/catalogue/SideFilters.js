@@ -4,10 +4,10 @@ import FilterContext, { CATEGORY_FILTERS, SIZE_FILTERS } from '../../context/fil
 import SexFilterButton from './ui/SexFilterButton';
 
 const SideFilters = () => {
-    const { filters, toggleFilter, setSexFilter } = useContext(FilterContext);
+    const { filters, setSexFilter } = useContext(FilterContext);
 
     return (
-        <div className='w-full font-light text-lg px-2 py-3'>
+        <div className='w-full h-screen font-light text-lg px-2 py-3 overflow-y-auto'>
             {/* Sex filter */}
             <div className='flex flex-col items-start text-gray-900 '>
                 <SexFilterButton sexFilter={filters['sex']} handleSetSexFilter={setSexFilter} sex='male' text="Mężczyzna" />

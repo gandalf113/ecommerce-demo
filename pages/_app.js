@@ -1,22 +1,21 @@
 import { useState } from 'react'
+import MobileFilterMenu from '../components/catalogue/MobileFilterMenu'
 import Layout from '../components/layout/Layout'
 import SideMenu from '../components/layout/SideMenu'
+import SideMenus from '../components/layout/SideMenus'
 import { FilterContextProvider } from '../context/filter-context'
 import LayoutProvider from '../context/layout-context'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
-  const [isSideMenuOpen, setIsSideMenuOpen] = useState(true);
-
-  const toggleSidemenu = () => {
-    setIsSideMenuOpen(!isSideMenuOpen);
-  }
 
   return (
     <LayoutProvider>
       <FilterContextProvider>
-        {<SideMenu isOpen={isSideMenuOpen} handleClose={() => setIsSideMenuOpen(false)} />}
-        <Layout toggleSidebar={toggleSidemenu}>
+        {/* MOBILE SIDEBARS */}
+        <SideMenus />
+
+        <Layout>
           <Component {...pageProps} />
         </Layout>
       </FilterContextProvider>

@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react'
 import Navbar from './Navbar'
 
-const Layout = ({ children, toggleSidebar }) => {
+const Layout = ({ children }) => {
     return (
         <Fragment>
-            <Navbar toggleSidebar={toggleSidebar} />
+            <Navbar />
             <main>
                 {children}
             </main>

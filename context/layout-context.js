@@ -4,7 +4,6 @@ export const LayoutContext = createContext();
 
 const LayoutProvider = props => {
     const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
-
     const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
 
     const toggleSideMenu = () => {
@@ -12,7 +11,7 @@ const LayoutProvider = props => {
     }
 
     const toggleFilterMenu = () => {
-        setIsFilterMenuOpen(false);
+        setIsFilterMenuOpen(!isFilterMenuOpen);
     }
 
     return (

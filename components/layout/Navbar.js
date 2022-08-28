@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import NavItem from '../ui/NavItem'
 import { SiFacebook } from 'react-icons/si'
 import { AiFillInstagram } from 'react-icons/ai'
 import { GiHamburgerMenu } from 'react-icons/gi'
+import { LayoutContext } from '../../context/layout-context'
 
 export const NAVIGATION = [
     {
@@ -27,7 +28,9 @@ export const NAVIGATION = [
     },
 ]
 
-const Navbar = ({ toggleSidebar }) => {
+const Navbar = () => {
+    const { toggleSideMenu } = useContext(LayoutContext);
+
     return (
         <div className='z-20 w-full flex justify-between items-center shadow h-16 px-8 bg-zinc-50'>
             {/* Main navigation */}
@@ -43,7 +46,7 @@ const Navbar = ({ toggleSidebar }) => {
                 <AiFillInstagram size={30} />
             </div>
 
-            <button className='md:hidden block' onClick={toggleSidebar}>
+            <button className='md:hidden block' onClick={toggleSideMenu}>
                 <GiHamburgerMenu size={24} />
             </button>
 
