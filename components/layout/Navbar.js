@@ -15,16 +15,8 @@ export const NAVIGATION = [
         link: "/katalog"
     },
     {
-        title: "O nas",
-        link: "/onas"
-    },
-    {
         title: "Kontakt",
         link: "/kontakt"
-    },
-    {
-        title: "Sprzedaj",
-        link: "/sprzedaj"
     },
 ]
 

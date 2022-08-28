@@ -1,7 +1,8 @@
 import { createContext, useState } from "react";
+import { getCategories } from "../dummy-data";
 import { appendElement, removeElement } from "../utils/shared-utils";
 
-export const CATEGORY_FILTERS = ['T-Shirty', 'Płaszcz', 'Kurtka', 'Bluza', 'Buty', 'Torba', 'Spodnie']
+export const CATEGORY_FILTERS = getCategories()
 export const SIZE_FILTERS = ['XS', 'S', 'M', 'L', 'XL', 'XXL']
 
 const FilterContext = createContext();
