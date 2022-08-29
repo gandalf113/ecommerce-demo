@@ -47,11 +47,11 @@ const Navbar = () => {
 
             {/* Icons */}
             <div className='flex items-center gap-x-4'>
-                <a href='https://www.facebook.com/komisolus/' target='_blank'
+                <a href='https://www.facebook.com/komisolus/' target='_blank' rel='noreferrer'
                     className='text-gray-500 hover:text-gray-600'>
                     <SiFacebook size={24} />
                 </a>
-                <a href='https://www.instagram.com/komis_olus_raciborz/' target='_blank'
+                <a href='https://www.instagram.com/komis_olus_raciborz/' target='_blank' rel='noreferrer'
                     className='text-gray-500 hover:text-gray-600'>
                     <AiFillInstagram size={30} />
                 </a>

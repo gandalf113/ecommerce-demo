@@ -9,7 +9,7 @@ const SideMenu = ({ isOpen, handleClose }) => {
         <Sidebar isOpen={isOpen} handleClose={handleClose}>
             <div className='p-4 space-y-3'>
                 {NAVIGATION.map(nav => (
-                    <p onClick={handleClose}>
+                    <p key={nav.title} onClick={handleClose}>
                         <Link href={nav.link}>{nav.title}</Link>
                     </p>
                 ))}
