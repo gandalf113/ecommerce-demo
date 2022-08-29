@@ -38,10 +38,22 @@ export const FilterContextProvider = props => {
         })
     }
 
-    const setSexFilter = (sex) => {
+    const clearAllFilters = () => {
+        setFilters(initialState);
+    }
+
+    const setSexFilter = (sex, clearAll = false) => {
+        const newFilters = clearAll ? initialState : filters
         setFilters({
-            ...filters,
+            ...newFilters,
             sex: sex
+        })
+    }
+
+    const selectChosenFilters = (key, filters) => {
+        setFilters({
+            ...initialState,
+            [key]: filters
         })
     }
 
@@ -63,7 +75,7 @@ export const FilterContextProvider = props => {
 
     return (
         <FilterContext.Provider value={{
-            filters, toggleFilter, toggleSelectAll, setSexFilter
+            filters, toggleFilter, toggleSelectAll, selectChosenFilters, setSexFilter, clearAllFilters
         }}>
             {props.children}
         </FilterContext.Provider>

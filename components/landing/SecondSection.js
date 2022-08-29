@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react'
-import { motion, useAnimation } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
+import React, { useContext, useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
+import FilterContext from '../../context/filter-context';
 import CatalogueItem from '../catalogue/CatalogueItem';
 import CategoryBlock from '../ui/CategoryBlock';
 
@@ -13,7 +14,9 @@ const variants = {
 };
 
 
-const SecondHeading = () => {
+const SecondSection = () => {
+    const { setSexFilter, selectChosenFilters } = useContext(FilterContext);
+
     const controls = useAnimation();
     const [ref, inView] = useInView();
 
@@ -48,13 +51,26 @@ const SecondHeading = () => {
 
             {/* Siatka z kategoriami (duże ekrany) */}
             <div className='grid grid-flow-col-dense gap-4 md:grid-rows-1 grid-rows-2 pb-2'>
-                <CategoryBlock rowSpan={1} image='/img/catalogue_woman.jpg' text='Kobieta' />
-                <CategoryBlock rowSpan={1} image='/img/catalogue_man.jpg' text='Mężczyzna' />
-                <CategoryBlock rowSpan={1} image='/img/catalogue_child_alt.jpg' text='Dziecko' />
-                <CategoryBlock rowSpan={1} image='/img/catalogue_shoes_alt.jpg' text='Obuwie' />
+                <CategoryBlock rowSpan={1} image='/img/catalogue_woman.jpg' text='Kobieta'
+                    handleSetFilter={() => {
+                        setSexFilter('female', true);
+                    }} />
+                <CategoryBlock rowSpan={1} image='/img/catalogue_man.jpg' text='Mężczyzna'
+                    handleSetFilter={() => {
+                        setSexFilter('male', true);
+                    }}
+                />
+                <CategoryBlock rowSpan={1} image='/img/catalogue_child_alt.jpg' text='Dziecko'
+                    handleSetFilter={() => {
+                        setSexFilter('baby', true);
+                    }} />
+                <CategoryBlock rowSpan={1} image='/img/catalogue_shoes_alt.jpg' text='Obuwie'
+                    handleSetFilter={() => {
+                        selectChosenFilters('category', ['Buty']);
+                    }} />
             </div>
         </motion.div>
     )
 }
 
-export default SecondHeading
+export default SecondSection

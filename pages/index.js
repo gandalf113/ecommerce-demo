@@ -1,14 +1,14 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import CategoryBlock from '../components/ui/CategoryBlock'
 import { motion } from 'framer-motion'
-import CatalogueItem from '../components/catalogue/CatalogueItem'
-import { getAllItems } from '../dummy-data'
-import SecondBlock from '../components/landing/SecondBlock'
-
+import SecondSection from '../components/landing/SecondSection'
+import { useContext } from 'react'
+import FilterContext from '../context/filter-context'
 
 export default function Home() {
+  const { clearAllFilters } = useContext(FilterContext);
+
   return (
     <div className='space-y-4'>
       {/* Pierwszy blok */}
@@ -42,7 +42,9 @@ export default function Home() {
             transition={{ delay: 1 }}
             className='flex justify-center gap-4 md:mt-10 mt-4'>
             <Link href='/katalog'>
-              <div className='rounded px-8 py-4 text-xl tracking-wider ring-1 hover:ring-2 ring-zinc-200 duration-200 text-white cursor-pointer w-fit'>
+              <div
+                onClick={clearAllFilters}
+                className='rounded px-8 py-4 text-xl tracking-wider ring-1 hover:ring-2 ring-zinc-200 duration-200 text-white cursor-pointer w-fit'>
                 Katalog
               </div>
             </Link>
@@ -53,8 +55,7 @@ export default function Home() {
 
       {/* Drugi blok */}
       <section className='md:w-10/12 m-auto px-6'>
-        <SecondBlock />
-
+        <SecondSection />
       </section>
 
     </div>

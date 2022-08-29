@@ -13,9 +13,9 @@ const DUMMY_DATA = [
         image: '/img/catalogue/green_queen.jpg',
         name: 'Queen',
         price: 28,
-        sex: 'female',
+        sex: 'baby',
         size: "S",
-        categories: ['Odzież dziecięca', 'Bluza']
+        categories: ['Bluza']
     },
     {
         id: '3',
