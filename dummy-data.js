@@ -50,7 +50,7 @@ const DUMMY_DATA = [
         image: '/img/catalogue/laura_biaggi.jpg',
         price: 89,
         sex: 'female',
-        size: null,
+        size: 'S',
         categories: ['Torba']
     },
     {
@@ -59,7 +59,7 @@ const DUMMY_DATA = [
         image: '/img/catalogue/bessie_london.jpg',
         price: 75,
         sex: 'female',
-        size: null,
+        size: 'L',
         categories: ['Torba']
     },
     {

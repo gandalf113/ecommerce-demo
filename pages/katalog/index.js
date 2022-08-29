@@ -15,6 +15,11 @@ const checkItemForSex = (item, filters) => {
     return item['sex'] === filters['sex'];
 }
 
+const checkItemForSize = (item, filters) => {
+    if (item['size'] === null) return true;
+    return filters['size'].includes(item['size']);
+}
+
 
 const CataloguePage = ({ items }) => {
     const { filters } = useContext(FilterContext);
@@ -23,7 +28,8 @@ const CataloguePage = ({ items }) => {
     const filterItems = () => {
         let filteredItems = items.filter(item => (
             checkItemForCategory(item, filters) &&
-            checkItemForSex(item, filters))
+            checkItemForSex(item, filters)) &&
+            checkItemForSize(item, filters)
         )
         return filteredItems
     }
@@ -37,7 +43,7 @@ const CataloguePage = ({ items }) => {
             {/* Mobile filters */}
             <div className='sm:hidden block'>
                 <button className='flex items-center gap-x-1 mb-2 text-gray-600'
-                onClick={toggleFilterMenu}>
+                    onClick={toggleFilterMenu}>
                     <MdFilterAlt />
                     Filtruj
                 </button>
