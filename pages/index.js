@@ -48,7 +48,8 @@ export default function Home() {
             <Link href='/katalog'>
               <div
                 onClick={clearAllFilters}
-                className='rounded px-8 py-4 text-xl tracking-wider ring-1 hover:ring-2 ring-zinc-200 duration-200 text-white cursor-pointer w-fit'>
+                className='rounded px-8 py-4 text-xl tracking-wider ring-1 hover:ring-2 ring-zinc-200
+                duration-200 text-white cursor-pointer w-fit hover:shadow-md hover:shadow-zinc-500'>
                 Katalog
               </div>
             </Link>

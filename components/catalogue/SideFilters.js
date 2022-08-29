@@ -15,10 +15,10 @@ const SideFilters = () => {
                 <SexFilterButton sexFilter={filters['sex']} handleSetSexFilter={setSexFilter} sex='baby' text="Dziecko" />
             </div>
 
-            <div className='my-3 border-t border-neutral-300' />
+            <hr className='my-3 border-t border-neutral-300 mx-1' />
 
             <FilterDropdown filterId='category' title='Kategoria' filterOptions={CATEGORY_FILTERS} />
-            <div className='my-3 border-t border-neutral-300' />
+            <hr className='my-3 border-t border-neutral-300 mx-1' />
             <FilterDropdown filterId='size' title='Rozmiar' filterOptions={SIZE_FILTERS} />
 
         </div>

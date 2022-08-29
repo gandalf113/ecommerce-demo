@@ -3,11 +3,11 @@ import React from 'react'
 const SexFilterButton = ({ sex, sexFilter, handleSetSexFilter, text }) => {
 
     return (
-        <button className={`${sexFilter === sex && 'italic'} hover:bg-zinc-100 w-full text-left`} onClick={() => {
+        <button className={`${sexFilter === sex ? 'bg-zinc-200' : 'bg-white hover:bg-zinc-100'} w-full text-left py-0.5 px-1`} onClick={() => {
             if (sex === sexFilter) handleSetSexFilter('any')
             else handleSetSexFilter(sex)
         }
-        }>{sexFilter === sex && <span>•</span>} {text}</button>
+        }>{text}</button>
     )
 }
 
