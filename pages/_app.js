@@ -1,7 +1,5 @@
-import { useState } from 'react'
-import MobileFilterMenu from '../components/catalogue/MobileFilterMenu'
+import Head from 'next/head'
 import Layout from '../components/layout/Layout'
-import SideMenu from '../components/layout/SideMenu'
 import SideMenus from '../components/layout/SideMenus'
 import { FilterContextProvider } from '../context/filter-context'
 import LayoutProvider from '../context/layout-context'
@@ -12,6 +10,11 @@ function MyApp({ Component, pageProps }) {
   return (
     <LayoutProvider>
       <FilterContextProvider>
+        <Head>
+          <title>Komis OLUŚ - sklep z odzieżą używaną</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Head>
+
         {/* MOBILE SIDEBARS */}
         <SideMenus />
 

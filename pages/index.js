@@ -11,6 +11,10 @@ export default function Home() {
 
   return (
     <div className='space-y-4'>
+      <Head>
+        <title>Używana odzież markowa</title>
+        <meta name='description' content='Sklep z odzieżą używaną'/>
+      </Head>
       {/* Pierwszy blok */}
       <section className='relative h-screen flex text-zinc-200'>
         {/* Tło */}

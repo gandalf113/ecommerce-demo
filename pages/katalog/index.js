@@ -1,4 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react'
+import Head from 'next/head'
+import React, { useContext } from 'react'
 import { MdFilterAlt } from 'react-icons/md'
 import ItemsList from '../../components/catalogue/ItemsList'
 import SideFilters from '../../components/catalogue/SideFilters'
@@ -36,6 +37,10 @@ const CataloguePage = ({ items }) => {
 
     return (
         <div className='p-4'>
+            <Head>
+                <title>Katalog produktów</title>
+                <meta name='description' content='Markowe ubrania second hand' />
+            </Head>
             {/* <h1 className='text-3xl tracking-tight font-extralight mb-4'>Przeglądaj dostępny towar</h1> */}
             {/* <div className='my-4 border-t-2 border-neutral-200' /> */}
             {/* <p>Active filters: {JSON.stringify(filters)}</p> */}
